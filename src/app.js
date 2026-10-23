@@ -1,4 +1,6 @@
+
 let proximoId = 1;
+
 function criarTarefa(titulo, descricao = "", prioridade = "Média") {
   if (!titulo || !titulo.trim()) {
     throw new Error("O título da tarefa é obrigatório.");
@@ -42,10 +44,23 @@ function excluirTarefa(tarefas, id) {
   );
 }
 
+// Nova funcionalidade: buscar tarefas pelo título
+function buscarTarefas(tarefas, termo) {
+  const busca = termo.trim().toLowerCase();
+
+  if (!busca) {
+    return tarefas;
+  }
+
+  return tarefas.filter(tarefa =>
+    tarefa.titulo.toLowerCase().includes(busca)
+  );
+}
+
 module.exports = {
   criarTarefa,
   alterarStatus,
   filtrarTarefas,
-  excluirTarefa
+  excluirTarefa,
+  buscarTarefas
 };
-
