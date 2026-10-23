@@ -3,11 +3,11 @@ const {
   criarTarefa,
   alterarStatus,
   filtrarTarefas,
-  excluirTarefa
+  excluirTarefa,
+  buscarTarefas
 } = require("../src/app");
 
 describe("Gerenciador de tarefas", () => {
-
   test("deve criar uma tarefa corretamente", () => {
     const tarefa = criarTarefa(
       "Conferir pedidos",
@@ -78,5 +78,30 @@ describe("Gerenciador de tarefas", () => {
     expect(resultado[0].titulo).toBe("Pedido 2");
   });
 
-});
+  test("deve buscar tarefas pelo título", () => {
+    const tarefas = [
+      criarTarefa("Conferir pedidos"),
+      criarTarefa("Separar produtos"),
+      criarTarefa("Entregar encomendas")
+    ];
 
+    const resultado = buscarTarefas(
+      tarefas,
+      "PEDIDOS"
+    );
+
+    expect(resultado).toHaveLength(1);
+    expect(resultado[0].titulo).toBe("Conferir pedidos");
+  });
+
+  test("deve retornar todas as tarefas quando a busca estiver vazia", () => {
+    const tarefas = [
+      criarTarefa("Pedido 1"),
+      criarTarefa("Pedido 2")
+    ];
+
+    const resultado = buscarTarefas(tarefas, "");
+
+    expect(resultado).toHaveLength(2);
+  });
+});
