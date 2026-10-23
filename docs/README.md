@@ -105,3 +105,27 @@ classDiagram
     GerenciadorTarefas ..> Tarefa : gerencia
 ```
 
+
+
+## 10. Mudança de escopo
+
+Durante o desenvolvimento do projeto, foi identificada a necessidade de facilitar a localização de tarefas cadastradas. Por isso, o escopo foi ampliado para incluir uma funcionalidade de busca por título.
+
+A nova função permite pesquisar tarefas utilizando parte do título, sem diferenciar letras maiúsculas de minúsculas. Quando o campo de busca está vazio, todas as tarefas são retornadas.
+
+### Justificativa da mudança
+
+A funcionalidade foi adicionada para melhorar a usabilidade e tornar mais rápido o gerenciamento das tarefas.
+
+### Implementação e controle de qualidade
+
+A função foi implementada em `src/app.js` e exportada para utilização nos testes automatizados. Foram adicionados testes para verificar a busca por título e o comportamento quando o termo de busca está vazio.
+
+Os testes são executados pelo GitHub Actions a cada alteração enviada ao repositório.
+
+### Registro da mudança
+
+- Cartão Kanban: Adicionar busca de tarefas por título.
+- Commit de implementação: `feat: adiciona busca de tarefas por título`.
+- Commit de testes: `test: adiciona testes para busca de tarefas`.
+- Validação: execução dos testes automatizados com resultado aprovado.
