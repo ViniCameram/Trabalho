@@ -79,3 +79,29 @@ flowchart LR
     U --- E
 ```
 
+
+
+## Diagrama UML de classes
+
+O diagrama apresenta a estrutura da tarefa e as operações utilizadas no sistema.
+
+```mermaid
+classDiagram
+    class Tarefa {
+        +number id
+        +string titulo
+        +string descricao
+        +string prioridade
+        +string status
+    }
+
+    class GerenciadorTarefas {
+        +criarTarefa(titulo, descricao, prioridade)
+        +alterarStatus(tarefa, novoStatus)
+        +filtrarTarefas(tarefas, status)
+        +excluirTarefa(tarefas, id)
+    }
+
+    GerenciadorTarefas ..> Tarefa : gerencia
+```
+
