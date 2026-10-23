@@ -1,0 +1,13 @@
+
+{
+  "name": "gerenciador-tarefas",
+  "version": "1.0.0",
+  "description": "Gerenciador de tarefas desenvolvido para um projeto acadêmico de metodologia ágil.",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}
