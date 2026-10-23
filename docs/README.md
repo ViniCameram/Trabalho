@@ -58,3 +58,24 @@ As mudanças de escopo devem ser registradas no quadro Kanban, implementadas por
 - `.github/workflows/testes.yml`: configuração da integração contínua.
 - `package.json`: configuração do projeto e dependências.
 
+
+## Diagrama UML de casos de uso
+
+O diagrama representa as principais ações que o usuário pode realizar no gerenciador de tarefas.
+
+```mermaid
+flowchart LR
+    U[Usuário]
+    A((Criar tarefa))
+    B((Consultar tarefas))
+    C((Alterar status))
+    D((Filtrar tarefas))
+    E((Excluir tarefa))
+
+    U --- A
+    U --- B
+    U --- C
+    U --- D
+    U --- E
+```
+
