@@ -1,11 +1,11 @@
-
+let proximoId = 1;
 function criarTarefa(titulo, descricao = "", prioridade = "Média") {
   if (!titulo || !titulo.trim()) {
     throw new Error("O título da tarefa é obrigatório.");
   }
 
   return {
-    id: Date.now(),
+    id: proximoId++,
     titulo: titulo.trim(),
     descricao: descricao.trim(),
     prioridade,
